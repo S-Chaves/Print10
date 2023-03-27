@@ -41,7 +41,7 @@ draw();
 function backSlash(ctx) {
   ctx.beginPath();
   ctx.moveTo(x, y);
-  ctx.lineTo(x + DIST, y + DIST);
+  ctx.lineTo(x + DIST,  y + DIST);
   ctx.stroke();
 }
 
