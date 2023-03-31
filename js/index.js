@@ -3,6 +3,7 @@ const HEIGHT = 400;
 const WIDTH = 400;
 let DIST = 10;
 let CLEAN = false;
+let DISTRIBUTION = 0.5;
 let x = 0;
 let y = 0;
 
@@ -17,7 +18,7 @@ function draw() {
       CLEAN = false;
     }
 
-    const rand = Math.random() < 0.5 ? 0 : 1;
+    const rand = Math.random() < DISTRIBUTION ? 0 : 1;
 
     if (rand) backSlash(ctx);
     else forwardSlash(ctx);
@@ -56,4 +57,8 @@ function forwardSlash(ctx) {
 document.querySelector('.distance').addEventListener('change', (e) => {
   DIST = parseInt(e.target.value);
   CLEAN = true;
+});
+
+document.querySelector('.distribution').addEventListener('change', (e) => {
+  DISTRIBUTION = parseInt(e.target.value);
 });
