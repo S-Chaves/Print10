@@ -1,7 +1,8 @@
 const canvas = document.querySelector('#canvas');
 const HEIGHT = 400;
 const WIDTH = 400;
-let DIST = 10;
+let XDIST = 10;
+let YDIST = 10;
 let CLEAN = false;
 let x = 0;
 let y = 0;
@@ -23,9 +24,9 @@ function draw() {
     else forwardSlash(ctx);
 
     if (y < HEIGHT) {
-      x += DIST;
+      x += XDIST;
       if (x > WIDTH) {
-        y += DIST;
+        y += YDIST;
         x = 0;
       }
     }
@@ -34,26 +35,30 @@ function draw() {
   }
 }
 
-
 draw();
 
 // Util functions
 function backSlash(ctx) {
   ctx.beginPath();
   ctx.moveTo(x, y);
-  ctx.lineTo(x + DIST,  y + DIST);
+  ctx.lineTo(x + XDIST,  y + YDIST);
   ctx.stroke();
 }
 
 function forwardSlash(ctx) {
   ctx.beginPath();
-  ctx.moveTo(x, y + DIST);
-  ctx.lineTo(x + DIST, y);
+  ctx.moveTo(x, y + YDIST);
+  ctx.lineTo(x + XDIST, y);
   ctx.stroke();
 }
 
 // Event listeners
-document.querySelector('.distance').addEventListener('change', (e) => {
-  DIST = parseInt(e.target.value);
+document.querySelector('.xdistance').addEventListener('change', (e) => {
+  XDIST = parseInt(e.target.value);
+  CLEAN = true;
+});
+
+document.querySelector('.ydistance').addEventListener('change', (e) => {
+  YDIST = parseInt(e.target.value);
   CLEAN = true;
 });
