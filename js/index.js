@@ -65,5 +65,5 @@ document.querySelector('.ydistance').addEventListener('change', (e) => {
 });
 
 document.querySelector('.distribution').addEventListener('change', (e) => {
-  DISTRIBUTION = parseInt(e.target.value);
+  DISTRIBUTION = parseInt(e.target.value) / 10;
 });
