@@ -38,3 +38,11 @@ body {
   width: 9rem;
   font-size: 1.3em;
 }
+
+.reset {
+  margin-inline: auto;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  
+}

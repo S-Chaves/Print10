@@ -42,7 +42,7 @@ draw();
 function backSlash(ctx) {
   ctx.beginPath();
   ctx.moveTo(x, y);
-  ctx.lineTo(x + XDIST,  y + YDIST);
+  ctx.lineTo(x + XDIST, y + YDIST);
   ctx.stroke();
 }
 
@@ -67,3 +67,5 @@ document.querySelector('.ydistance').addEventListener('change', (e) => {
 document.querySelector('.distribution').addEventListener('change', (e) => {
   DISTRIBUTION = parseInt(e.target.value) / 10;
 });
+
+document.querySelector('.reset').addEventListener('click', () => CLEAN = true);
